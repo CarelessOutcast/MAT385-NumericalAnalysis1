@@ -43,7 +43,7 @@ def bisect(a,b,tol,n):    #main procedure
 # Define the function f(x), plot its graph and approximate the root
 
 def f(x):
-    return(np.exp(x)-x-2)
+    return(x**5+x-1)
 
 x = np.linspace(-3,2,100)   #generates 100 x values between -3,2
 y = f(x)
@@ -51,5 +51,5 @@ plt.plot(x,y)   # plots the graph of the function
 plt.show()
 
 print("Approximate root & steps:")
-print(bisect(1.0,2.0,0.5*10**(-6),100)) #calls the bisect procedure with specific parameters
+print(bisect(0.0,1.0,0.5*10**(-8),100)) #calls the bisect procedure with specific parameters
 
