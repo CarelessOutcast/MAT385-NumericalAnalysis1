@@ -1,5 +1,8 @@
 import shutil, re, sys
 
+#TODO point it to the doc folder 
+
+
 def main():
     expression = re.compile("^%INSERT PROBLEMS HERE%")
 
