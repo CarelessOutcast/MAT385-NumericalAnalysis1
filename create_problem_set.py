@@ -11,7 +11,7 @@ def main():
     if num == 0:
         print('please give a homework number: ')
         return -1
-    filename = 'HW-%i.txt'%num
+    filename = 'HW-%i.tex'%num
     # Copy the template
     template = open('homework-template.txt','rb')
     copyTemp = open(filename,'wb')
