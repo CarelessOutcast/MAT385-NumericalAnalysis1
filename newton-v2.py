@@ -28,5 +28,21 @@ def newton(x0,TOL,N):
 
 def f(x): 
 	return x**3+x**2-1;
+def a1(x):
+    return (-1)*x**3+2*x+2 
+def c1(x):
+    return 
+def c4(x):
+    return
 
-newton(1.0,0.5*10**(-5),50)
+print("")
+#newton(1.0,0.5*10**(-5),50)
+
+print("Problem 1a")
+newton(1.0,0.5*10**(-8),50)
+
+print("Problem 1c")
+newton(1.0,0.5*10**(-8),50)
+
+print("Problem 4c")
+newton(1.0,0.5*10**(-8),50)

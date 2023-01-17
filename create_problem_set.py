@@ -10,10 +10,19 @@ def main():
     expression = re.compile("^%INSERT PROBLEMS HERE%")
 
     #Create copy of Homwork Assignment Template
-    num = int(sys.argv[1]) or 0
-    if num == 0:
-        print("Please pick a num")
-        return -1
+    if len(sys.argv) < 2:
+        print("Usage: python3 create_problem_set.py [num_of_problem_set]")
+        return;
+    try: 
+        num = int(sys.argv[1])
+    except:
+        print("Please give a valid number")
+        return
+
+    if num > 10 or num < 0:
+        print("Invalid index error")
+        return;
+
     filename = './doc/HW-%i/HW-%i.tex'%(num,num)
     create_copy(filename)
 
@@ -52,7 +61,11 @@ def main():
 def create_copy(filename):
     # Copy the template
     template = open('doc/homework-template.txt','rb')
-    copyTemp = open(filename,'wb')
+    try:
+        copyTemp = open(filename,'wb')
+    except:
+        print(f"{filename} could not be processed")
+        return
     shutil.copyfileobj(template,copyTemp)
 
     # closing the Template
