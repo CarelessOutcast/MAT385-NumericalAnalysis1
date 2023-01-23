@@ -10,8 +10,8 @@ def main():
     expression = re.compile("^%INSERT PROBLEMS HERE%")
 
     #Create copy of Homwork Assignment Template
-    if len(sys.argv) < 2:
-        print("Usage: python3 create_problem_set.py [num_of_problem_set]")
+    if len(sys.argv) < 3:
+        print("Usage: python3 create_problem_set.py [# of Homework] [# of Sections]")
         return;
     try: 
         num = int(sys.argv[1])
@@ -27,7 +27,6 @@ def main():
     create_copy(filename)
 
     #Get dictionary of all problems
-    #FIXME file location is incorrect
     homework_html_location = f"../Homework {num}/Homework {num}.html"
     dic = dict_items(homework_html_location)
     
@@ -97,7 +96,7 @@ def dict_items(filename):
         content = file.read();
         soup = BeautifulSoup(content,"html.parser")
 
-    secs = 2 #number of sections
+    secs = int(sys.argv[2]) #number of sections
     # regex to find problem questions
     section_num = re.compile(r"(?<=(Section ))\d.\d:")
     question_num = re.compile(r"(?<=,|>)\s?(\d\w*)")
