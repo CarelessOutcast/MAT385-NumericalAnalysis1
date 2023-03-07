@@ -16,8 +16,6 @@ def randwalk(b,a):
     if pos==a:
         avar = 1
     return [count,avar]
-    
-
 
 # Estimate the escape time for one simulation
 #  #(a)
@@ -39,6 +37,7 @@ values = []
 N = 10000
 probs = 0
 steps = 0
+
 for n in range(N):
     values.append(0)
     values[n], avar = randwalk(b,a)
@@ -50,12 +49,13 @@ for n in range(N):
     variance += (values[n]-(steps/N))**2
 
 print(f"\n  For {N} trials")
-print('Sample Mean:&\t',steps/N)
-print('Variance:&\t',variance/(N-1))
-print('Standard Err:&\t',(variance/(N-1))**(1/2))
-print(f'Actual prob:&\t {b/(b-a)}')
-print(f'Cal. prob:&\t {probs/N}')
-print(f'prob\\,\\,Error:&\t {b/(b-a)-probs/N}')
+print('Sample Mean:\t',steps/N)
+print('Variance:\t',variance/(N-1))
+print('Standard Err:\t',(variance/(N-1))**(1/2))
+print('')
+print(f'Actual prob:\t {b/(b-a)}')
+print(f'Cal. prob:\t {probs/N}')
+print(f'prob Error:\t {b/(b-a)-probs/N}')
 
 
 
