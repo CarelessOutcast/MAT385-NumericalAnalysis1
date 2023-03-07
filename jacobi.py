@@ -46,7 +46,9 @@ A=bandmatrix([-1,3,-1],n)       #initialize band matrix A
 
 print("Matrix A:\n",A)
 
-b=np.ones(n);b[0]=2;b[n-1]=2    #initialize vector b
+b=np.ones(n)
+b[0]=2
+b[n-1]=2    #initialize vector b
 
 print("Vector b:\n",b)
 
